@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <title>Title</title>
+  </head>
+  <style>
+    body {
+      background: #f6f9fc;
+      margin-top: 20px;
+    }
+    /* booking */
+
+    .bg-light-blue {
+      background-color: #e9f7fe !important;
+      color: #3184ae;
+      padding: 7px 18px;
+      border-radius: 4px;
+    }
+
+    .bg-light-green {
+      background-color: rgba(40, 167, 69, 0.2) !important;
+      padding: 7px 18px;
+      border-radius: 4px;
+      color: #28a745 !important;
+    }
+
+    .buttons-to-right {
+      position: absolute;
+      right: 0;
+      top: 40%;
+    }
+
+    .btn-gray {
+      color: #666;
+      background-color: #eee;
+      padding: 7px 18px;
+      border-radius: 4px;
+    }
+
+    .booking:hover .buttons-to-right .btn-gray {
+      opacity: 1;
+      transition: 0.3s;
+    }
+
+    .buttons-to-right .btn-gray {
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .btn-gray:hover {
+      background-color: #36a3f5;
+      color: #fff;
+    }
+
+    .booking {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 30px;
+    }
+
+    .booking:last-child {
+      margin-bottom: 0px;
+      border-bottom: none;
+      padding-bottom: 0px;
+    }
+
+    @media screen and (max-width: 575px) {
+      .buttons-to-right {
+        top: 10%;
+      }
+      .buttons-to-right a {
+        display: block;
+        margin-bottom: 20px;
+      }
+      .buttons-to-right a:last-child {
+        margin-bottom: 0px;
+      }
+      .bg-light-blue,
+      .bg-light-green,
+      .btn-gray {
+        padding: 7px;
+      }
+    }
+
+    .card {
+      margin-bottom: 20px;
+      background-color: #fff;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      box-shadow: none;
+      border: none;
+      padding: 25px;
+    }
+    .mb-5,
+    .my-5 {
+      margin-bottom: 3rem !important;
+    }
+    .msg-img {
+      margin-right: 20px;
+    }
+    .msg-img img {
+      width: 60px;
+      border-radius: 50%;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    a {
+      text-decoration: none !important;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-white mb-5">
+            <div class="card-heading clearfix border-bottom mb-4">
+              <h4 class="card-title">Booking Requests</h4>
+            </div>
+            <div class="card-body"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function createBookingCard() {
+        const cardbody = document.createElement("div");
+        cardbody.className = "card-body";
+
+        const ul = document.createElement("ul");
+        ul.className = "list-unstyled";
+
+        const li = document.createElement("li");
+        li.className = "position-relative booking";
+
+        const media = document.createElement("div");
+        media.className = "media";
+
+        const msg = document.createElement("div");
+        msg.className = "msg-img";
+
+        const img = document.createElement("img");
+        img.setAttribute(
+          "src",
+          "https://bootdey.com/img/Content/avatar/avatar6.png"
+        );
+        img.setAttribute("alt", "");
+        msg.appendChild(img);
+
+        const mediaBody = document.createElement("div");
+        mediaBody.className = "media-body";
+
+        const h5 = document.createElement("h5");
+        h5.className = "mb-4";
+        h5.textContent = "Sunny Apartment";
+
+        const span = document.createElement("span");
+        span.className = "badge badge-primary mx-3";
+        span.textContent = "Pending";
+
+        const span2 = document.createElement("span");
+        span2.className = "badge badge-danger";
+        span2.textContent = "Unpaid";
+
+        h5.appendChild(span);
+        h5.appendChild(span2);
+
+        const span3 = document.createElement("span");
+        span3.className = "mr-2 d-block d-sm-inline-block mb-2 mb-sm-0";
+        span3.textContent = "Booking Date:";
+
+        const span4 = document.createElement("span");
+        span4.className = "bg-light-blue";
+        span4.textContent = "02.03.2020 - 04.03.2020";
+
+        h5.appendChild(span3);
+        h5.appendChild(span4);
+
+        const mb = document.createElement("div");
+        mb.className = "mb-3";
+
+        const span5 = document.createElement("span");
+        span5.className = "mr-2 d-block d-sm-inline-block mb-2 mb-sm-0";
+        span5.textContent = "Booking Details:";
+
+        const span6 = document.createElement("span");
+        span6.className = "bg-light-blue";
+        span6.textContent = "2 Adults";
+
+        mb.appendChild(span5);
+        mb.appendChild(span6);
+
+        const mb2 = document.createElement("div");
+        mb2.className = "mb-3";
+
+        const span7 = document.createElement("span");
+        span7.className = "mr-2 d-block d-sm-inline-block mb-2 mb-sm-0";
+        span7.textContent = "Price:";
+
+        const span8 = document.createElement("span");
+        span8.className = "bg-light-blue";
+        span8.textContent = "$147";
+
+        mb2.appendChild(span7);
+        mb2.appendChild(span8);
+
+        const mb3 = document.createElement("div");
+        mb3.className = "mb-5";
+
+        const span9 = document.createElement("span");
+        span9.className = "mr-2 d-block d-sm-inline-block mb-1 mb-sm-0";
+        span9.textContent = "Clients:";
+
+        const span10 = document.createElement("span");
+        span10.className = "border-right pr-2 mr-2";
+        span10.textContent = "John Inoue";
+
+        const span11 = document.createElement("span");
+        span11.className = "border-right pr-2 mr-2";
+        span11.textContent = "john@example.com";
+
+        const span12 = document.createElement("span");
+        span12.textContent = "123-456-789";
+
+        mb3.appendChild(span9);
+        mb3.appendChild(span10);
+        mb3.appendChild(span11);
+        mb3.appendChild(span12);
+
+        const btn = document.createElement("a");
+        btn.className = "btn-gray";
+        btn.textContent = "Send Message";
+
+        mediaBody.appendChild(h5);
+        mediaBody.appendChild(mb);
+        mediaBody.appendChild(mb2);
+        mediaBody.appendChild(mb3);
+        mediaBody.appendChild(btn);
+        media.appendChild(msg);
+        media.appendChild(mediaBody);
+        li.appendChild(media);
+        ul.appendChild(li);
+        cardbody.appendChild(ul);
+
+        return cardbody;
+      }
+
+      // Mapda 3 marta yaratish
+      for (let i = 0; i < 3; i++) {
+        const card = createBookingCard();
+        document.querySelector(".card").appendChild(card);
+      }
+    </script>
+  </body>
+</html>
